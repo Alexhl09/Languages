@@ -7,14 +7,6 @@
 
 import Foundation
 
-enum Operation : Int{
-    case add = 0
-    case sub
-    case mul
-    case div
-    case error = 999
-}
-
 enum Identifier : Int{
     case integer = 400
     case register = 500
@@ -25,50 +17,29 @@ enum Identifier : Int{
     
 }
 
-enum Tokens : Int{
-    case zero = 0
-    case one
-    case two
-    case three
-    case four
-    case five
-    case six
-    case seven
-    case eight
-    case nine
-    case space = 10
-    case gato = 35
-    case puntoComa = 59
-    case a = 65
-    case b
-    case c
-    case d
-    case i = 73
-    case l = 76
-    case m
-    case o = 79
-    case s = 83
-    case u = 85
-    case v
-    case error = 999
+struct Token{
+    var identifier : String
+    var value : String
 }
 
 class Lexer {
-    //let tokens : [Token]
-    var textToAnalyze : String
+
+    private var textToAnalyze : String
+
     init(){
-        defer{
-            print("There is an error, check again")
-        }
-        
-        print("Type the name of the file, without extension\n")
-        guard let nameOfFile = readLine() else {
-            self.textToAnalyze = ""
-            return}
         var path : URL?
+        
+        // Ask the user the name of the file
         repeat{
+            print("Type the name of the file, without extension\n")
+            guard let nameOfFile = readLine() else {
+                self.textToAnalyze = ""
+                return}
             path = Bundle.main.url(forResource: nameOfFile, withExtension: "txt")
         }while path == nil
+        
+        
+        // Get complete string to analyze
         do{
             self.textToAnalyze = try String(contentsOf: path!)
         } catch let error{
@@ -77,90 +48,67 @@ class Lexer {
         }
     }
     
-    func getTokens(){
+    func getTokens() -> [Token]{
+       
         
-//        case a = 65
-//        case b
-//        case c
-//        case d
-//        case i = 73
-//        case l = 76
-//        case m
-//        case o = 79
-//        case s = 83
-//        case u = 85
-//        case v
-        //        let transitionMatrix : [[Int]] = [[0space,1nu,2gat,3punt,4a,999b,999c,7d,999i,999l,10m,999o,12s,999u,999v,999],
-
-        let transitionMatrix : [[Int]] = [[0,1,2,800,4,999,999,7,999,999,10,999,12,999,999,999],
-                                          [0,1,999,999,999,999,999,999,999,999,999,999,999,999,999,999],
-                                          [999,999,999,999,500,500,500,500,999,999,999,999,999,999,999,999],
-                                          [0,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999],
-                                          [0,999,999,999,999,999,999,7,999,999,999,999,999,999,999,999],
-                                          [0,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999],
-                                         [0,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999],
-                                            [999,999,999,999,999,999,999,600,999,999,999,999,999,999,999,999],
-                                            [999,999,999,999,999,999,999,999,999,999,999,999,999,999,600,999],
-                                            [0,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999],
-                                            [0,999,999,999,999,999,999,999,999,999,999,11,999,13,999,999],
-                                            [999,999,999,999,999,999,999,999,999,999,999,999,999,999,700,999],
-                                            [999,999,999,999,999,999,999,999,999,999,999,999,999,13,999,999],
-                                            [999,999,999,999,999,600,999,999,999,600,600,999,999,999,999,999],
-                                            [0,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999],
-                                            [999,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999],
-
-            //[0,999,999,999,999,999,999,999,999,999,999,999,11,999,999,14,999,999],
-
-                                          ]
+        let transitionMatrix : [[Int]] = getTransitionMatrix()
         var index = 0
-        var c : Character = " "
+        var char : Character = " "
         var state = 0
-        let arrayCharacters = Array(self.textToAnalyze)
-        var token : [(Int, String)] = []
+        var tokens : [Token] = []
         var prevState = 0
-        var prevChar : Character = " "
-
-        while (index < arrayCharacters.count) {
+        
+        while (index < self.textToAnalyze.count) {
             var value = ""
             repeat {
-                c = arrayCharacters[index]
+                let i = self.textToAnalyze.index(self.textToAnalyze.startIndex, offsetBy: index)
+                char = self.textToAnalyze[i]
                 index += 1
-                let f = filter(char: c)
-                guard f < 100 else {
-                    print("Not identified character")
-                    return}
+                let filtered = filter(char: char)
+                guard filtered < 100 else {
+                    print("Not identified character: \(char)")
+                    return []}
                 
-                state = transitionMatrix[state][f]
+                state = transitionMatrix[state][filtered]
                 
-              
-                if(prevChar.isNumber && prevState == 1){
+                // Verify numbers when they have reached an end, set state to 400
+                if(state == 0  && prevState == 1){
                     state = 400
                 }
                 
-                if (state != 0 && state != 400) {
-                    value.append(c)
+                switch state {
+                // White spaces with an incomplete string, error
+                case 0 where value.count > 0:
+                    print("Incomplete string for value '\(value)' followed by space")
+                    exit(EXIT_FAILURE)
+                // Append characters
+                case 1...900 where state != 400:
+                    value.append(char)
+                // Error for 999 state
+                case 999:
+                    print("Error with the string sequence: \(value), due to a problem with the character \(char)")
+                    exit(EXIT_FAILURE)
+                default:
+                    break
                 }
                 
-                
                 prevState = state
-                prevChar = c
                 
-            } while (index < arrayCharacters.count && state < 200)
-            if(state == 999){
-                exit(EXIT_FAILURE)
-            }else if(state > 200){
-                token.append((state,value))
+            } while (index < self.textToAnalyze.count && state < 200)
+            
+            // Good token, reached goal
+            if(state > 200){
+                tokens.append(Token(identifier: "\(Identifier(rawValue: state) ?? .error)", value: value))
             }
+            
+            // Set again the state to 0
             state = 0
         }
     
-        for (a,b) in token{
-            print("\(b) - \(Identifier(rawValue: a) ?? .error)")
-        }
-        print(token)
+        return tokens
         
 }
-    func filter(char : Character) -> Int{
+    func filter(char : Character) -> Int {
         if(char.isNumber){
             return 1
         }else{
@@ -201,33 +149,4 @@ class Lexer {
         }
     }
 }
-/**
- do{
-     print("Type the name of the file, without extension\n")
-     guard let nameOfFile = readLine() else {return}
-     
-     if let url = Bundle.main.url(forResource: "example", withExtension: "txt") {
-               do {
 
-                   let myData = try Data(contentsOf: url)
-                   print(myData.count)
-               } catch {
-                   print(error)
-               }
-           }
-
-     if let audioFilePath = Bundle.main.url(forResource: "ex", withExtension: "txt"){
-         print(audioFilePath)
-     }
-     
-//            let currentDirectoryURL = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-//            print(currentDirectoryURL.absoluteURL)
-//            let url = URL(fileURLWithPath: nameOfFile, relativeTo: currentDirectoryURL)
-//            print(url.absoluteURL)
-//            let textToAnalyze = try String(contentsOf: url)
-//            let trimmedCode = textToAnalyze.trimmingCharacters(in: .whitespacesAndNewlines)
-//            print(trimmedCode)
- }catch let error{
-     print(error.localizedDescription)
- }
-**/

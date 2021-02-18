@@ -1,0 +1,7 @@
+MOV 5 #B
+MOV 1 #A
+SUM #B #D
+MOV #A #C
+SUB #D #A
+;
+

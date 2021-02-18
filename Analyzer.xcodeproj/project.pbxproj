@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		A9267E1E25DDFCF000B1C57C /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9267E1D25DDFCF000B1C57C /* Lexer.swift */; };
 		A9267E3825DE0CAB00B1C57C /* example.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = A9267E2425DE053A00B1C57C /* example.txt */; };
+		A96C820625DF134D00DBAFF9 /* badExample_1.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = A96C820125DF120F00DBAFF9 /* badExample_1.txt */; };
+		A96C820725DF134D00DBAFF9 /* badExample_2.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = A96C820225DF124E00DBAFF9 /* badExample_2.txt */; };
+		A96C820825DF134D00DBAFF9 /* goodExample_1.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = A96C820325DF127F00DBAFF9 /* goodExample_1.txt */; };
+		A96C820925DF134D00DBAFF9 /* goodExample_2.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = A96C820425DF12AD00DBAFF9 /* goodExample_2.txt */; };
+		A96C820C25DF23B700DBAFF9 /* TransitionMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C820B25DF23B700DBAFF9 /* TransitionMatrix.swift */; };
 		A97794E125DC86AF00E82011 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97794E025DC86AF00E82011 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -19,6 +24,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				A96C820625DF134D00DBAFF9 /* badExample_1.txt in CopyFiles */,
+				A96C820725DF134D00DBAFF9 /* badExample_2.txt in CopyFiles */,
+				A96C820825DF134D00DBAFF9 /* goodExample_1.txt in CopyFiles */,
+				A96C820925DF134D00DBAFF9 /* goodExample_2.txt in CopyFiles */,
 				A9267E3825DE0CAB00B1C57C /* example.txt in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,6 +46,11 @@
 /* Begin PBXFileReference section */
 		A9267E1D25DDFCF000B1C57C /* Lexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lexer.swift; sourceTree = "<group>"; };
 		A9267E2425DE053A00B1C57C /* example.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = example.txt; path = Analyzer/example.txt; sourceTree = SOURCE_ROOT; };
+		A96C820125DF120F00DBAFF9 /* badExample_1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = badExample_1.txt; sourceTree = "<group>"; };
+		A96C820225DF124E00DBAFF9 /* badExample_2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = badExample_2.txt; sourceTree = "<group>"; };
+		A96C820325DF127F00DBAFF9 /* goodExample_1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = goodExample_1.txt; sourceTree = "<group>"; };
+		A96C820425DF12AD00DBAFF9 /* goodExample_2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = goodExample_2.txt; sourceTree = "<group>"; };
+		A96C820B25DF23B700DBAFF9 /* TransitionMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionMatrix.swift; sourceTree = "<group>"; };
 		A97794DD25DC86AF00E82011 /* Analyzer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Analyzer; sourceTree = BUILT_PRODUCTS_DIR; };
 		A97794E025DC86AF00E82011 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,6 +66,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A96C820025DF11F900DBAFF9 /* examples */ = {
+			isa = PBXGroup;
+			children = (
+				A96C820125DF120F00DBAFF9 /* badExample_1.txt */,
+				A96C820225DF124E00DBAFF9 /* badExample_2.txt */,
+				A96C820325DF127F00DBAFF9 /* goodExample_1.txt */,
+				A96C820425DF12AD00DBAFF9 /* goodExample_2.txt */,
+			);
+			path = examples;
+			sourceTree = "<group>";
+		};
 		A97794D425DC86AF00E82011 = {
 			isa = PBXGroup;
 			children = (
@@ -71,9 +96,11 @@
 		A97794DF25DC86AF00E82011 /* Analyzer */ = {
 			isa = PBXGroup;
 			children = (
+				A96C820025DF11F900DBAFF9 /* examples */,
 				A9267E2425DE053A00B1C57C /* example.txt */,
 				A97794E025DC86AF00E82011 /* main.swift */,
 				A9267E1D25DDFCF000B1C57C /* Lexer.swift */,
+				A96C820B25DF23B700DBAFF9 /* TransitionMatrix.swift */,
 			);
 			path = Analyzer;
 			sourceTree = "<group>";
@@ -138,6 +165,7 @@
 			files = (
 				A9267E1E25DDFCF000B1C57C /* Lexer.swift in Sources */,
 				A97794E125DC86AF00E82011 /* main.swift in Sources */,
+				A96C820C25DF23B700DBAFF9 /* TransitionMatrix.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

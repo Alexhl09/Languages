@@ -1,0 +1,5 @@
+SUM #A #D
+MOV 233 #D
+SUB #B #D
+;
+

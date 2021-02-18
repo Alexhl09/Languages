@@ -1,0 +1,12 @@
+MOV 5 #A
+MOV 102 #B
+SUM #A #B
+.
+;
+MOV #B #C
+MOD #C #A
+MOV #C #D
+MOV 2 #A
+SUB #D #A
+.
+

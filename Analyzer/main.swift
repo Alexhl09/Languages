@@ -8,4 +8,7 @@
 import Foundation
 
 let lexer = Lexer()
-lexer.getTokens()
+let tokens = lexer.getTokens()
+for i in tokens{
+    print(i.identifier + " - " + i.value)
+}
