@@ -7,5 +7,5 @@
 
 import Foundation
 
-print("Hello, World!")
-
+let lexer = Lexer()
+lexer.getTokens()

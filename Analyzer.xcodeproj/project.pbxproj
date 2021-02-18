@@ -7,22 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A9267E1E25DDFCF000B1C57C /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9267E1D25DDFCF000B1C57C /* Lexer.swift */; };
+		A9267E3825DE0CAB00B1C57C /* example.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = A9267E2425DE053A00B1C57C /* example.txt */; };
 		A97794E125DC86AF00E82011 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97794E025DC86AF00E82011 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A97794DB25DC86AF00E82011 /* CopyFiles */ = {
+		A9267E3725DE0C9F00B1C57C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				A9267E3825DE0CAB00B1C57C /* example.txt in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A97794DB25DC86AF00E82011 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A9267E1D25DDFCF000B1C57C /* Lexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lexer.swift; sourceTree = "<group>"; };
+		A9267E2425DE053A00B1C57C /* example.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = example.txt; path = Analyzer/example.txt; sourceTree = SOURCE_ROOT; };
 		A97794DD25DC86AF00E82011 /* Analyzer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Analyzer; sourceTree = BUILT_PRODUCTS_DIR; };
 		A97794E025DC86AF00E82011 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,7 +71,9 @@
 		A97794DF25DC86AF00E82011 /* Analyzer */ = {
 			isa = PBXGroup;
 			children = (
+				A9267E2425DE053A00B1C57C /* example.txt */,
 				A97794E025DC86AF00E82011 /* main.swift */,
+				A9267E1D25DDFCF000B1C57C /* Lexer.swift */,
 			);
 			path = Analyzer;
 			sourceTree = "<group>";
@@ -72,6 +88,7 @@
 				A97794D925DC86AF00E82011 /* Sources */,
 				A97794DA25DC86AF00E82011 /* Frameworks */,
 				A97794DB25DC86AF00E82011 /* CopyFiles */,
+				A9267E3725DE0C9F00B1C57C /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -119,6 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9267E1E25DDFCF000B1C57C /* Lexer.swift in Sources */,
 				A97794E125DC86AF00E82011 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
