@@ -56,7 +56,6 @@ class Lexer {
         var char : Character = " "
         var state = 0
         var tokens : [Token] = []
-        var prevState = 0
         
         while (index < self.textToAnalyze.count) {
             var value = ""
@@ -71,11 +70,6 @@ class Lexer {
                 
                 state = transitionMatrix[state][filtered]
                 
-                // Verify numbers when they have reached an end, set state to 400
-                if(state == 0  && prevState == 1){
-                    state = 400
-                }
-                
                 switch state {
                 // White spaces with an incomplete string, error
                 case 0 where value.count > 0:
@@ -84,6 +78,8 @@ class Lexer {
                 // Append characters
                 case 1...900 where state != 400:
                     value.append(char)
+                case 400:
+                    index -= 1
                 // Error for 999 state
                 case 999:
                     print("Error with the string sequence: '\(value)', due to a problem with the character \(char)")
@@ -91,9 +87,7 @@ class Lexer {
                 default:
                     break
                 }
-                
-                prevState = state
-                
+                            
             } while (index < self.textToAnalyze.count && state < 200)
             
             // Good token, reached goal
@@ -105,6 +99,7 @@ class Lexer {
             state = 0
         }
     
+        print(tokens)
         return tokens
         
 }
