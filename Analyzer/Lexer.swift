@@ -99,7 +99,6 @@ class Lexer {
             state = 0
         }
     
-        print(tokens)
         return tokens
         
 }
