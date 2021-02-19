@@ -5,6 +5,7 @@ MOV #B #C
 MUL #C #A
 MOV #C #D
 MOV 223 #A
+DIV #A #B
 SUB #D #A
 ;
 

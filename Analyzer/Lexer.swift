@@ -86,7 +86,7 @@ class Lexer {
                     value.append(char)
                 // Error for 999 state
                 case 999:
-                    print("Error with the string sequence: \(value), due to a problem with the character \(char)")
+                    print("Error with the string sequence: '\(value)', due to a problem with the character \(char)")
                     exit(EXIT_FAILURE)
                 default:
                     break
