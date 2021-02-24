@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37C1E02625E5F47700EA5CD9 /* Syntactic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1E02525E5F47700EA5CD9 /* Syntactic.swift */; };
 		A9267E1E25DDFCF000B1C57C /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9267E1D25DDFCF000B1C57C /* Lexer.swift */; };
 		A9267E3825DE0CAB00B1C57C /* example.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = A9267E2425DE053A00B1C57C /* example.txt */; };
 		A96C820625DF134D00DBAFF9 /* badExample_1.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = A96C820125DF120F00DBAFF9 /* badExample_1.txt */; };
@@ -44,6 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		37C1E02525E5F47700EA5CD9 /* Syntactic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syntactic.swift; sourceTree = "<group>"; };
 		A9267E1D25DDFCF000B1C57C /* Lexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lexer.swift; sourceTree = "<group>"; };
 		A9267E2425DE053A00B1C57C /* example.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = example.txt; path = Analyzer/example.txt; sourceTree = SOURCE_ROOT; };
 		A96C820125DF120F00DBAFF9 /* badExample_1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = badExample_1.txt; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				A97794E025DC86AF00E82011 /* main.swift */,
 				A9267E1D25DDFCF000B1C57C /* Lexer.swift */,
 				A96C820B25DF23B700DBAFF9 /* TransitionMatrix.swift */,
+				37C1E02525E5F47700EA5CD9 /* Syntactic.swift */,
 			);
 			path = Analyzer;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37C1E02625E5F47700EA5CD9 /* Syntactic.swift in Sources */,
 				A9267E1E25DDFCF000B1C57C /* Lexer.swift in Sources */,
 				A97794E125DC86AF00E82011 /* main.swift in Sources */,
 				A96C820C25DF23B700DBAFF9 /* TransitionMatrix.swift in Sources */,
@@ -291,7 +295,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XYQR9G9T5T;
+				DEVELOPMENT_TEAM = 2444FZT349;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -302,7 +306,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XYQR9G9T5T;
+				DEVELOPMENT_TEAM = 2444FZT349;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
