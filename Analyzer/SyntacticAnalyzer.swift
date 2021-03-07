@@ -14,14 +14,12 @@ import Foundation
 /*
  GRAMMAR:
  
- S -> X
+ S -> X;
  
  X -> O R R X
  
  X -> MOV R R X
  X -> MOV I R X
-
- X -> ;
  
  TERMINAL
  O -> SUM
@@ -53,8 +51,8 @@ class SyntacticAnalyzer{
             return
 //            return true
         }else{
-            print(type(of: expected.value))
-            print(type(of: tokens[0].value))
+            print(type(of: expected.value), " " , expected.value, "-")
+            print(type(of: tokens[0].value), " " , tokens[0].value, "-")
 
             print("Error with string syntax: expected '\(expected.value) but found '\(tokens[0].value)'")
             exit(EXIT_FAILURE)
@@ -102,7 +100,6 @@ class SyntacticAnalyzer{
         return Token(identifier: "\(Identifier.register)", value: token.value)
     }
     
-    //                    CHECAR SI JALA CON VACIO O CADA LETRA
     func parseS(tokens : inout [Token]) -> Void{
         //        Check if array is empty
                 if(tokens.isEmpty){
