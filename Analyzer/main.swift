@@ -14,3 +14,4 @@ for i in tokens{
 }
 let syntacticParser = SyntacticAnalyzer()
 syntacticParser.parse(tokens: &tokens)
+print("Sequence accepted!")

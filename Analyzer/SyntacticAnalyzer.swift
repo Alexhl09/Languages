@@ -51,17 +51,14 @@ class SyntacticAnalyzer{
             return
 //            return true
         }else{
-            print(type(of: expected.value), " " , expected.value, "-")
-            print(type(of: tokens[0].value), " " , tokens[0].value, "-")
-
-            print("Error with string syntax: expected '\(expected.value) but found '\(tokens[0].value)'")
+            print("Error with string syntax: expected '\(expected.identifier)' - '\(expected.value)', but found '\(tokens[0].identifier)' - '\(tokens[0].value)'")
             exit(EXIT_FAILURE)
 //            return false
         }
     }
     
     func parse(tokens : inout [Token]) -> Void{
-        print("Starting syntax analysis")
+        print("\nStarting syntax analysis...\n")
         parseS(tokens: &tokens)
     }
     
@@ -97,7 +94,7 @@ class SyntacticAnalyzer{
     }
     
     func getTerminalInteger(token : Token) -> Token{
-        return Token(identifier: "\(Identifier.register)", value: token.value)
+        return Token(identifier: "\(Identifier.integer)", value: token.value)
     }
     
     func parseS(tokens : inout [Token]) -> Void{
