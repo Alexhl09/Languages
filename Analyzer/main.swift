@@ -8,7 +8,9 @@
 import Foundation
 
 let lexer = Lexer()
-let tokens = lexer.getTokens()
+var tokens = lexer.getTokens()
 for i in tokens{
     print(i.identifier + " - " + i.value)
 }
+let syntacticParser = SyntacticAnalyzer()
+syntacticParser.parse(tokens: &tokens)

@@ -50,7 +50,6 @@ class Lexer {
     
     func getTokens() -> [Token]{
        
-        
         let transitionMatrix : [[Int]] = getTransitionMatrix()
         var index = 0
         var char : Character = " "
@@ -100,8 +99,8 @@ class Lexer {
         }
     
         return tokens
-        
 }
+    
     func filter(char : Character) -> Int {
         if(char.isNumber){
             return 1
@@ -142,5 +141,6 @@ class Lexer {
             }
         }
     }
+    
 }
 
