@@ -124,7 +124,7 @@ class SyntacticAnalyzer{
                     break
                 case "\(Identifier.eof)":
                     match(tokens: &tokens, expected: Token(identifier: "\(Identifier.eof)", value: ";"))
-                    break
+                    return
                 default:
                     print("Error with string syntax: undefined token type detected")
                     exit(EXIT_FAILURE)
