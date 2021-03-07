@@ -1,0 +1,6 @@
+MOV 5 #A
+MOV 10 #B
+SUM #A #D
+SUM #D #C
+MUL #B 1234
+;

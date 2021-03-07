@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		37BC623625F54AF200C42AAE /* SyntacticAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BC623525F54AF200C42AAE /* SyntacticAnalyzer.swift */; };
+		37BC625225F55D1A00C42AAE /* badExample_8.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37BC624C25F55D1A00C42AAE /* badExample_8.txt */; };
+		37BC625325F55D1A00C42AAE /* badExample_6.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37BC624D25F55D1A00C42AAE /* badExample_6.txt */; };
+		37BC625425F55D1A00C42AAE /* badExample_5.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37BC624E25F55D1A00C42AAE /* badExample_5.txt */; };
+		37BC625525F55D1A00C42AAE /* badExample_4.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37BC624F25F55D1A00C42AAE /* badExample_4.txt */; };
+		37BC625625F55D1A00C42AAE /* badExample_7.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37BC625025F55D1A00C42AAE /* badExample_7.txt */; };
+		37BC625725F55D1A00C42AAE /* badExample_3.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37BC625125F55D1A00C42AAE /* badExample_3.txt */; };
 		A9267E1E25DDFCF000B1C57C /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9267E1D25DDFCF000B1C57C /* Lexer.swift */; };
 		A9267E3825DE0CAB00B1C57C /* example.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = A9267E2425DE053A00B1C57C /* example.txt */; };
 		A96C820625DF134D00DBAFF9 /* badExample_1.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = A96C820125DF120F00DBAFF9 /* badExample_1.txt */; };
@@ -25,6 +31,12 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				37BC625225F55D1A00C42AAE /* badExample_8.txt in CopyFiles */,
+				37BC625325F55D1A00C42AAE /* badExample_6.txt in CopyFiles */,
+				37BC625425F55D1A00C42AAE /* badExample_5.txt in CopyFiles */,
+				37BC625525F55D1A00C42AAE /* badExample_4.txt in CopyFiles */,
+				37BC625625F55D1A00C42AAE /* badExample_7.txt in CopyFiles */,
+				37BC625725F55D1A00C42AAE /* badExample_3.txt in CopyFiles */,
 				A96C820625DF134D00DBAFF9 /* badExample_1.txt in CopyFiles */,
 				A96C820725DF134D00DBAFF9 /* badExample_2.txt in CopyFiles */,
 				A96C820825DF134D00DBAFF9 /* goodExample_1.txt in CopyFiles */,
@@ -46,6 +58,12 @@
 
 /* Begin PBXFileReference section */
 		37BC623525F54AF200C42AAE /* SyntacticAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyntacticAnalyzer.swift; sourceTree = "<group>"; };
+		37BC624C25F55D1A00C42AAE /* badExample_8.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = badExample_8.txt; path = Analyzer/examples/badExample_8.txt; sourceTree = "<group>"; };
+		37BC624D25F55D1A00C42AAE /* badExample_6.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = badExample_6.txt; path = Analyzer/examples/badExample_6.txt; sourceTree = "<group>"; };
+		37BC624E25F55D1A00C42AAE /* badExample_5.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = badExample_5.txt; path = Analyzer/examples/badExample_5.txt; sourceTree = "<group>"; };
+		37BC624F25F55D1A00C42AAE /* badExample_4.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = badExample_4.txt; path = Analyzer/examples/badExample_4.txt; sourceTree = "<group>"; };
+		37BC625025F55D1A00C42AAE /* badExample_7.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = badExample_7.txt; path = Analyzer/examples/badExample_7.txt; sourceTree = "<group>"; };
+		37BC625125F55D1A00C42AAE /* badExample_3.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = badExample_3.txt; path = Analyzer/examples/badExample_3.txt; sourceTree = "<group>"; };
 		A9267E1D25DDFCF000B1C57C /* Lexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lexer.swift; sourceTree = "<group>"; };
 		A9267E2425DE053A00B1C57C /* example.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = example.txt; path = Analyzer/example.txt; sourceTree = SOURCE_ROOT; };
 		A96C820125DF120F00DBAFF9 /* badExample_1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = badExample_1.txt; sourceTree = "<group>"; };
@@ -82,6 +100,12 @@
 		A97794D425DC86AF00E82011 = {
 			isa = PBXGroup;
 			children = (
+				37BC625125F55D1A00C42AAE /* badExample_3.txt */,
+				37BC624F25F55D1A00C42AAE /* badExample_4.txt */,
+				37BC624E25F55D1A00C42AAE /* badExample_5.txt */,
+				37BC624D25F55D1A00C42AAE /* badExample_6.txt */,
+				37BC625025F55D1A00C42AAE /* badExample_7.txt */,
+				37BC624C25F55D1A00C42AAE /* badExample_8.txt */,
 				A97794DF25DC86AF00E82011 /* Analyzer */,
 				A97794DE25DC86AF00E82011 /* Products */,
 			);

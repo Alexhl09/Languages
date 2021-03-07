@@ -51,7 +51,7 @@ class SyntacticAnalyzer{
             return
 //            return true
         }else{
-            print("Error with string syntax: expected '\(expected.identifier)' - '\(expected.value)', but found '\(tokens[0].identifier)' - '\(tokens[0].value)'")
+            print("Error with string syntax: expected '\(expected.value)', but found '\(tokens[0].value)'")
             exit(EXIT_FAILURE)
 //            return false
         }
@@ -74,7 +74,7 @@ class SyntacticAnalyzer{
         case "#D":
             return Token(identifier: "\(Identifier.register)", value: "#D")
         default:
-            return Token(identifier: "", value: "")
+            return Token(identifier: "\(Identifier.register)", value: "REGISTER")
         }
     }
     
@@ -89,7 +89,7 @@ class SyntacticAnalyzer{
         case "DIV":
             return Token(identifier: "\(Identifier.operation)", value: "DIV")
         default:
-            return Token(identifier: "", value: "")
+            return Token(identifier: "\(Identifier.operation)", value: "OPERATION")
         }
     }
     
