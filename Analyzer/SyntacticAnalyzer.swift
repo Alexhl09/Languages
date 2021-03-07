@@ -59,7 +59,7 @@ class SyntacticAnalyzer{
     
     func parse(tokens : inout [Token]) -> Void{
         print("\nStarting syntax analysis...\n")
-        parseS(tokens: &tokens)
+        parseX(tokens: &tokens)
     }
     
 //    Generating token for terminal rules
@@ -97,7 +97,7 @@ class SyntacticAnalyzer{
         return Token(identifier: "\(Identifier.integer)", value: token.value)
     }
     
-    func parseS(tokens : inout [Token]) -> Void{
+    func parseX(tokens : inout [Token]) -> Void{
         //        Check if array is empty
                 if(tokens.isEmpty){
                     print("Error with string syntax: expecting token but found nothing")
@@ -127,6 +127,6 @@ class SyntacticAnalyzer{
                     exit(EXIT_FAILURE)
                 }
         
-        parseS(tokens: &tokens)
+        parseX(tokens: &tokens)
     }
 }
