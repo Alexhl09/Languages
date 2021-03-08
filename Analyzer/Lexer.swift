@@ -65,7 +65,7 @@ class Lexer {
                 let filtered = filter(char: char)
                 guard filtered < 100 else {
                     print("Not identified character: \(char)")
-                    return []}
+                    exit(EXIT_FAILURE)}
                 
                 state = transitionMatrix[state][filtered]
                 
